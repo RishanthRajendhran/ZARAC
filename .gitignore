@@ -1,0 +1,4 @@
+./model
+./datasets/ecqa/episodes
+./wandb
+./inferenceOuts

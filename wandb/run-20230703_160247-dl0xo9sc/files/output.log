@@ -1,0 +1,57 @@
+
+Using pretrained model and tokenizer from allenai/unifiedqa-t5-3b on HuggingFace
+Downloading (…)lve/main/config.json: 100%|████████████████████| 1.24k/1.24k [00:00<00:00, 2.97MB/s]
+
+
+
+
+
+
+
+
+
+
+
+Downloading pytorch_model.bin:  20%|█████▎                     | 2.26G/11.4G [00:23<01:26, 106MB/s]Traceback (most recent call last):
+  File "/uufs/chpc.utah.edu/common/home/u1419542/ZARA/trainTest.py", line 455, in <module>
+    main()
+  File "/uufs/chpc.utah.edu/common/home/u1419542/ZARA/trainTest.py", line 325, in main
+    model = T5ForConditionalGeneration.from_pretrained(modelID, device_map="auto")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/general/vast/u1419542/miniconda3/envs/starcEnv/lib/python3.11/site-packages/transformers/modeling_utils.py", line 2432, in from_pretrained
+    resolved_archive_file = cached_file(pretrained_model_name_or_path, filename, **cached_file_kwargs)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/general/vast/u1419542/miniconda3/envs/starcEnv/lib/python3.11/site-packages/transformers/utils/hub.py", line 417, in cached_file
+    resolved_file = hf_hub_download(
+                    ^^^^^^^^^^^^^^^^
+  File "/scratch/general/vast/u1419542/miniconda3/envs/starcEnv/lib/python3.11/site-packages/huggingface_hub/utils/_validators.py", line 118, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/scratch/general/vast/u1419542/miniconda3/envs/starcEnv/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 1364, in hf_hub_download
+    http_get(
+  File "/scratch/general/vast/u1419542/miniconda3/envs/starcEnv/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 541, in http_get
+    for chunk in r.iter_content(chunk_size=10 * 1024 * 1024):
+  File "/scratch/general/vast/u1419542/miniconda3/envs/starcEnv/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/scratch/general/vast/u1419542/miniconda3/envs/starcEnv/lib/python3.11/site-packages/urllib3/response.py", line 628, in stream
+    data = self.read(amt=amt, decode_content=decode_content)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/general/vast/u1419542/miniconda3/envs/starcEnv/lib/python3.11/site-packages/urllib3/response.py", line 567, in read
+    data = self._fp_read(amt) if not fp_closed else b""
+           ^^^^^^^^^^^^^^^^^^
+  File "/scratch/general/vast/u1419542/miniconda3/envs/starcEnv/lib/python3.11/site-packages/urllib3/response.py", line 533, in _fp_read
+    return self._fp.read(amt) if amt is not None else self._fp.read()
+           ^^^^^^^^^^^^^^^^^^
+  File "/scratch/general/vast/u1419542/miniconda3/envs/starcEnv/lib/python3.11/http/client.py", line 466, in read
+    s = self.fp.read(amt)
+        ^^^^^^^^^^^^^^^^^
+  File "/scratch/general/vast/u1419542/miniconda3/envs/starcEnv/lib/python3.11/socket.py", line 706, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/general/vast/u1419542/miniconda3/envs/starcEnv/lib/python3.11/ssl.py", line 1278, in recv_into
+    return self.read(nbytes, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/general/vast/u1419542/miniconda3/envs/starcEnv/lib/python3.11/ssl.py", line 1134, in read
+    return self._sslobj.read(len, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
