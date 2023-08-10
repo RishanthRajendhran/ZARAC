@@ -1,0 +1,4 @@
+
+Using pretrained model and tokenizer from allenai/unifiedqa-t5-3b on HuggingFace
+INFO:root:trainData: 48
+INFO:root:testData: 350
